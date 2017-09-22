@@ -27,7 +27,7 @@ Demonstration_SGP <- updateSGP(
 	calculate.simex.baseline=list(state='DEMO', lambda=seq(0,2,0.5), simulation.iterations=75, extrapolation='linear', save.matrices=TRUE),
 	sgp.target.scale.scores=TRUE,
 	sgPlot.demo.report=TRUE,
-	parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=10, BASELINE_PERCENTILES=10, PROJECTIONS=10, LAGGED_PROJECTIONS=10, SGP_SCALE_SCORE_TARGETS=10, SUMMARY=20, GA_PLOTS=4, SG_PLOTS=1)))
+	parallel.config=list(BACKEND="PARALLEL", WORKERS=list(TAUS=10, SIMEX=10, PROJECTIONS=10, LAGGED_PROJECTIONS=10, SGP_SCALE_SCORE_TARGETS=10, SUMMARY=20, GA_PLOTS=4, SG_PLOTS=1)))
 
 
 ### Save results
