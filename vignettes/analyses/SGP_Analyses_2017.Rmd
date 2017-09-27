@@ -31,13 +31,9 @@ vignette: >
 
 # 2017 Data Preparation Source Code
 
-```{r eval=TRUE, echo=FALSE, warning=FALSE}
-cat(readtext("../../../Demonstration_Data_LONG_2016_2017.R")[['text']])
-```
+<code data-gist-id="7b92e8157109933df27ff9e8a2dc960b" data-gist-file="Demonstration_Data_LONG.R"></code>
 
 
 # 2017 Data Analysis Source Code
 
-```{r eval=TRUE, echo=FALSE, warning=FALSE}
-cat(readtext("../../../Demonstration_SGP_2016_2017.R")[['text']])
-```
+<code data-gist-id="7b92e8157109933df27ff9e8a2dc960b" data-gist-file="Demonstration_SGP.R" data-gist-highlight-line="28-34"></code>

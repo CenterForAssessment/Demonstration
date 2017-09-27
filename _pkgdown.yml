@@ -1,6 +1,6 @@
 DESCRIPTION:
   Package: Demonstration SGP
-  Title: SGP analysis source code & documentation for Demonstration
+  Title: SGP analysis source code & documentation for Demonstration
   Authors@R: c(person(given=c("Damian", "W."), family="Betebenner", email="dbetebenner@nciea.org", role=c("aut", "cre")),
            person(given=c("Adam", "R."), family="Van Iwaarden", email="avaniwaarden@gmail.com", role="aut"))
   License: GPL-3
@@ -31,11 +31,11 @@ navbar:
     - text: Analyses
       menu:
       - text: "SGP Analyses: 2015"
-        href: /articles/analyses/SGP_Analyses_2015.html
+        href: articles/analyses/SGP_Analyses_2015.html
       - text: "SGP Analyses: 2016"
-        href: /articles/analyses/SGP_Analyses_2016.html
+        href: articles/analyses/SGP_Analyses_2016.html
       - text: "SGP Analyses: 2017"
-        href: /articles/analyses/SGP_Analyses_2017.html
+        href: articles/analyses/SGP_Analyses_2017.html
     - text: News
       menu:
       - text: "SGP notes"
