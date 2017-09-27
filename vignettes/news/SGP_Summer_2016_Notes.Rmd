@@ -1,0 +1,32 @@
+---
+title: "SGP Notes Summer 2016"
+author: "Damian W Betebenner & Adam R Van Iwaarden"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{SGP Notes Summer 2016}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r include = FALSE}
+    library(SGP)
+    library(SGPdata)
+    library(readtext)
+
+    is_html_output = function() {
+        knitr::opts_knit$get("rmarkdown.pandoc.to")=="html"
+    }
+
+    knitr::opts_chunk$set(
+        collapse=TRUE,
+        comment="",
+        prompt=TRUE,
+        fig.dpi=96)
+
+    if (is_html_output()) {
+        options(width=1000)
+    }
+```
+
+# Notes on 2016 SGP Analyses

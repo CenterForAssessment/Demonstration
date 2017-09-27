@@ -40,11 +40,11 @@ navbar:
       menu:
       - text: "SGP notes"
       - text: "Summer 2017"
-        href: articles/news/SGP_Summer_2017_Notes.html
+        href: articles/news/SGP_Notes_Summer_2017.html
       - text: "Summer 2016"
-        href: articles/news/SGP_Summer_2016_Notes.html
+        href: articles/news/SGP_Notes_Summer_2016.html
       - text: "Summer 2015"
-        href: articles/news/SGP_Summer_2015_Notes.html
+        href: articles/news/SGP_Notes_Summer_2015.html
     right:
       - icon: fa-github fa-2x
         href: https://github.com/centerforassessment/Demonstration
