@@ -1,7 +1,7 @@
 ---
 title: "SGP Notes Summer 2016"
 author: "Damian W Betebenner & Adam R Van Iwaarden"
-date: "`r Sys.Date()`"
+date: "July 22nd, 2016"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{SGP Notes Summer 2016}
