@@ -1,0 +1,39 @@
+---
+title: "SGP Analyses 2015"
+author: "Damian W Betebenner & Adam R Van Iwaarden"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{SGP Analyses 2015}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r include = FALSE}
+    library(SGP)
+    library(SGPdata)
+    library(readtext)
+
+    is_html_output = function() {
+        knitr::opts_knit$get("rmarkdown.pandoc.to")=="html"
+    }
+
+    knitr::opts_chunk$set(
+        collapse=TRUE,
+        comment="",
+        prompt=TRUE,
+        fig.dpi=96)
+
+    if (is_html_output()) {
+        options(width=1000)
+    }
+```
+
+# 2015 Data Preparation Source Code
+
+<script src="https://gist-it.appspot.com/github/centerforassessment/Demonstration/blob/master/Demonstration_Data_LONG.R"></script>
+
+
+# 2015 Data Analysis Source Code
+
+<script src="https://gist-it.appspot.com/github/centerforassessment/Demonstration/blob/master/Demonstration_SGP.R"></script>

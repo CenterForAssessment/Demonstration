@@ -24,27 +24,27 @@ navbar:
     left:
     - text: Reports
       menu:
-      - text: "Technical Report: 2016"
-        href: articles/reports/Technical_Report_2016.html
       - text: "Technical Report: 2017"
         href: articles/reports/Technical_Report_2017.html
+      - text: "Technical Report: 2016"
+        href: articles/reports/Technical_Report_2016.html
     - text: Analyses
       menu:
-      - text: "SGP Analyses: 2015"
-        href: articles/analyses/SGP_Analyses_2015.html
-      - text: "SGP Analyses: 2016"
-        href: articles/analyses/SGP_Analyses_2016.html
       - text: "SGP Analyses: 2017"
         href: articles/analyses/SGP_Analyses_2017.html
+      - text: "SGP Analyses: 2016"
+        href: articles/analyses/SGP_Analyses_2016.html
+      - text: "SGP Analyses: 2015"
+        href: articles/analyses/SGP_Analyses_2015.html
     - text: News
       menu:
       - text: "SGP notes"
-      - text: "Summer 2015"
-        href: articles/news/SGP_Summer_2015_Notes.html
-      - text: "Summer 2016"
-        href: articles/news/SGP_Summer_2016_Notes.html
       - text: "Summer 2017"
         href: articles/news/SGP_Summer_2017_Notes.html
+      - text: "Summer 2016"
+        href: articles/news/SGP_Summer_2016_Notes.html
+      - text: "Summer 2015"
+        href: articles/news/SGP_Summer_2015_Notes.html
     right:
       - icon: fa-github fa-2x
         href: https://github.com/centerforassessment/Demonstration
