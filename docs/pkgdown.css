@@ -5,13 +5,6 @@ img.icon {
   height: 30px;
 }
 
-.gist-it-gist .gist-file,
-.gister-gist .gist-file {
-    border: 0.1px solid #f5f5f5;
-    font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
-    margin-bottom: 1em;
-}
-
 /* Fixes for fixed navbar --------------------------*/
 
 body {
