@@ -1,8 +1,8 @@
 ---
 title: <span style="color:#0085A1; font-size:5rem">Student Growth Percentiles</span>
 subtitle: "Theory and Implementation in R"
-author: "Damian W Betebenner & Adam VanIwaarden"
-date: "`r format(Sys.time(), '%B %d, %Y')`"
+author: "Damian W Betebenner & Adam R Van Iwaarden"
+date: "`r toOrdinal::toOrdinalDate('2017-10-10')`"
 output:
     html_document:
         css: tufte-css-master/tufte.css
