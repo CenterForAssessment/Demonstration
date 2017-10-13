@@ -1,33 +1,14 @@
 ---
-title: <span style="color:#0085A1; font-size:5rem">Student Growth Percentiles</span>
+title: "Student Growth Percentiles"
 subtitle: "Theory and Implementation in R"
-author: "Damian W Betebenner & Adam R Van Iwaarden"
-date: "`r toOrdinal::toOrdinalDate('2017-10-10')`"
-output:
-    html_document:
-        css: tufte-css-master/tufte.css
-        highlight: pygments
-        keep_md: no
-        theme: cerulean
-        toc: yes
-        toc_float: yes
-    bookdown::tufte_book2:
-        includes:
-            in_header: preamble.tex
-            before_body: before_body.tex
-        latex_engine: xelatex
-        citation_package: natbib
-#        keep_tex: yes
-bibliography: bibliography/refs.bib
-#abstract: "This document provides an introduction to student growth percentiles (SGP)"
+abstract: "This document provides an introduction to Student Growth Percentiles (SGP)"
+author: "Damian W Betebenner & Adam R VanIwaarden"
+date: "`r toOrdinal::toOrdinalDate('2017-10-12')`"
 keywords: "SGP, student growth percentiles, student growth projections, R"
-nocite: |
-  @Betebenner:2009, @RSoftware, @SGP:2017, @ShangVanI:2015
+style: "tufte"
 ---
 
-
-
-# [Preface](#preface)
+# Preface
 
 The following provides a brief introduction to generalized additive models and some thoughts on getting started within the R environment.  It doesn't assume much more than a basic exposure to regression, and maybe a general idea of R though not necessarily any particular expertise. The presentation is of a very applied nature, and such that the topics build upon the familiar and generalize to the less so, with the hope that one can bring the concepts they are comfortable with to the new material. The audience in mind is a researcher with typical applied science training.
 
