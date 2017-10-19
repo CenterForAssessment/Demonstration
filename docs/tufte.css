@@ -54,7 +54,9 @@ article { position: relative;
 section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
+/*
 p, ol, ul { font-size: 1.4rem; }
+*/
 
 p { line-height: 2rem;
     margin-top: 1.4rem;
@@ -70,11 +72,13 @@ blockquote footer { width: 50%;
                     font-size: 1.1rem;
                     text-align: right; }
 
+/*
 ol, ul { width: 45%;
          -webkit-padding-start: 5%;
          -webkit-padding-end: 5%; }
 
 li { padding: 0.5rem 0; }
+*/
 
 table {
   border-top: 2px solid #111;
