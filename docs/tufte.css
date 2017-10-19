@@ -72,7 +72,7 @@ blockquote footer { width: 50%;
                     font-size: 1.1rem;
                     text-align: right; }
 
-/*
+/* REMOVED 10-19-2017 to get navbar in project pages to work with Tufte
 ol, ul { width: 45%;
          -webkit-padding-start: 5%;
          -webkit-padding-end: 5%; }
