@@ -3,7 +3,7 @@ title: "Tufte Handout"
 subtitle: "An implementation in R Markdown"
 author: "JJ Allaire and Yihui Xie"
 date: "`r Sys.Date()`"
-style: tufte
+style: "tufte"
 ---
 
 ```{r setup, include=FALSE}

@@ -6519,5 +6519,15 @@ input[type="checkbox"],
 /* Custom Stuff */
 
 .tocify {
-    border-radius: 2px;   
+    border-radius: 2px;
+    border: 1px solid #444;
+}
+
+.gist-it-gist .gist-file .gist-data, .gister-gist .gist-file .gist-data {
+    background-color: #f1f1f1;
+}
+
+.gist-meta {
+    background-color: #fdfdfd;
+    font-family: sans-serif;
 }
