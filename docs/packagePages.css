@@ -3221,6 +3221,7 @@ tbody.collapse.in {
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;
+  background-color: rgba(240, 244, 126, 0.92);
   color: black; }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
@@ -3997,6 +3998,9 @@ tbody.collapse.in {
     padding-bottom: 6px;
     padding-top: 5px;
     margin-top: 5px; }
+  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #222;
+    background-color: transparent; }
   @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
       color: #444; }
@@ -6517,6 +6521,10 @@ input[type="checkbox"],
   color: inherit; }
 
 /* Custom Stuff */
+
+#TOC {
+    margin: 25px 0px 20px -40px;
+}
 
 .tocify {
     border-radius: 2px;
