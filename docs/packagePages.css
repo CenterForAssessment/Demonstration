@@ -6522,13 +6522,10 @@ input[type="checkbox"],
 
 /* Custom Stuff */
 
-#TOC {
-    margin: 25px 0px 20px -40px;
-}
-
 .tocify {
     border-radius: 2px;
     border: 1px solid #444;
+    margin: 25px 0px 20px -40px;
 }
 
 .gist-it-gist .gist-file .gist-data, .gister-gist .gist-file .gist-data {
