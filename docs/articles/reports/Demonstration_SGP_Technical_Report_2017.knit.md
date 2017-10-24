@@ -3,17 +3,12 @@ title: "Student Growth Percentiles"
 subtitle: "Theory and Implementation in R"
 abstract: "This document provides an introduction to Student Growth Percentiles (SGP)"
 author: "Damian W Betebenner & Adam R VanIwaarden"
-date: "`r toOrdinal::toOrdinalDate('2017-10-12')`"
+date: "October 12th, 2017"
 keywords: "SGP, student growth percentiles, student growth projections, R"
 style: "tufte"
 ---
 
-```{r setup, include=FALSE}
-library(tufte)
-# invalidate cache when the tufte version changes
-knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
-options(htmltools.dir.version = FALSE)
-```
+
 
 
 # Preface
@@ -23,7 +18,7 @@ The following provides a brief introduction to generalized additive models and s
 As this document is more conceptual, a basic familiarity with R is all that is needed to follow the code, though there is much to be gained from simple web browsing on R if one needs it. And while it wasn't the intention starting out, this document could be seen as a vignette for the <span class="pack">mgcv</span> package, which is highly recommended.
 
 
-This document was created with [Rstudio](http://rstudio.org/) and rmarkdown. <span class="marginnote">Last modified `r Sys.Date()`. Original draft August, 2012.</span>
+This document was created with [Rstudio](http://rstudio.org/) and rmarkdown. <span class="marginnote">Last modified 2017-10-24. Original draft August, 2012.</span>
 
 \cite{Betebenner:2009}
 
@@ -35,7 +30,7 @@ Color guide:
 - <span class="func">function</span>
 - <span class="objclass">object or class</span>
 
-R Info: **`r sessionInfo()$R.version$version.string` `r sessionInfo()$R.version$nickname`**
+R Info: **R version 3.4.1 (2017-06-30) Single Candle**
 
 
 
