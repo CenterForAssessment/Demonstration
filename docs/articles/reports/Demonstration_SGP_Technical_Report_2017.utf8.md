@@ -6,6 +6,9 @@ author: "Damian W Betebenner & Adam R VanIwaarden"
 date: "October 12th, 2017"
 keywords: "SGP, student growth percentiles, student growth projections, R"
 style: "tufte"
+includes:
+  in_header: SGP_Cover_Page.tex
+  before_body: dedication.tex
 ---
 
 
