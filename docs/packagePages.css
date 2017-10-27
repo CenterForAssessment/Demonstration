@@ -1073,7 +1073,7 @@ body {
   font-size: 15px;
   line-height: 1.846;
   color: #444;
-  background-color: #fff; }
+  background-color: #fffff6; }
 
 input,
 button,
@@ -1544,8 +1544,7 @@ pre {
 .row {
   margin-left: -15px;
   margin-right: -15px;
-  margin-top: 20px;
-  background-color: #fffff8; }
+  margin-top: 20px; }
   .row:before, .row:after {
     content: " ";
     display: table; }
