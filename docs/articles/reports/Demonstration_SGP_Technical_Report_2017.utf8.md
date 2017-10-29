@@ -21,7 +21,7 @@ The following provides a brief introduction to generalized additive models and s
 As this document is more conceptual, a basic familiarity with R is all that is needed to follow the code, though there is much to be gained from simple web browsing on R if one needs it. And while it wasn't the intention starting out, this document could be seen as a vignette for the <span class="pack">mgcv</span> package, which is highly recommended.
 
 
-This document was created with [Rstudio](http://rstudio.org/) and rmarkdown. <span class="marginnote">Last modified 2017-10-27. Original draft August, 2012.</span>
+This document was created with [Rstudio](http://rstudio.org/) and rmarkdown. <span class="marginnote">Last modified 2017-10-29. Original draft August, 2012.</span>
 
 \cite{Betebenner:2009}
 
