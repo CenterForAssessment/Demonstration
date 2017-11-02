@@ -4,6 +4,7 @@ subtitle: "An implementation in R Markdown"
 author: "JJ Allaire and Yihui Xie"
 date: "October 12th, 2017"
 style: "tufte"
+bibliography: skeleton.bib
 ---
 
 
@@ -108,7 +109,7 @@ One of the most prominent and distinctive features of this style is the extensiv
 
 If you'd like to place ancillary information in the margin without the sidenote mark (the superscript number), you can use the `margin_note()` function from **tufte** in an inline R expression. \marginnote{This is a margin note.  Notice that there is no number preceding the note.} This function does not process the text with Pandoc, so Markdown syntax will not work here. If you need to write anything in Markdown syntax, please use the `marginfigure` block described previously.
 
-# References
+# Biblography and References
 
 References can be displayed as margin notes for HTML output. For example, we can cite R here [@R-base]. To enable this feature, you must set `link-citations: yes` in the YAML metadata, and the version of `pandoc-citeproc` should be at least 0.7.2. You can always install your own version of Pandoc from http://pandoc.org/installing.html if the version is not sufficient. To check the version of `pandoc-citeproc` in your system, you may run this in R:
 
@@ -379,3 +380,5 @@ file.edit(
 This document is also available in [Chinese](http://rstudio.github.io/tufte/cn/), and its `envisioned` style can be found [here](http://rstudio.github.io/tufte/envisioned/).
 
 
+
+# References

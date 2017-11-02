@@ -1,0 +1,214 @@
+\documentclass[]{tufte-book}
+
+%  AVI - remove the "double-sided" effect (blank page between chapters) - https://tex.stackexchange.com/questions/111580/removing-an-unwanted-page-between-two-chapters
+\let\cleardoublepage\clearpage
+%
+
+% ams
+\usepackage{amssymb,amsmath}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \makeatletter
+  \@ifpackageloaded{fontspec}{}{\usepackage{fontspec}}
+  \makeatother
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \makeatletter
+  \@ifpackageloaded{soul}{
+     \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+     \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+   }{}
+  \makeatother
+
+\fi
+
+% graphix
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+% booktabs
+\usepackage{booktabs}
+
+% url
+\usepackage{url}
+
+% hyperref
+\usepackage{hyperref}
+
+% units.
+\usepackage{units}
+
+
+\setcounter{secnumdepth}{-1}
+
+% citations
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+% pandoc syntax highlighting
+
+% longtable
+
+% multiplecol
+\usepackage{multicol}
+
+% strikeout
+\usepackage[normalem]{ulem}
+
+% morefloats
+\usepackage{morefloats}
+
+
+% tightlist macro required by pandoc >= 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{booktabs}
+\usepackage[svgnames]{xcolor}
+\usepackage{geometry}
+\hyphenation{thatshouldnot}
+
+\usepackage{makeidx}
+\makeindex
+
+\newcommand{\subtitle}[1]{
+  \gdef\@subtitle{#1}
+}
+
+\renewcommand{\maketitlepage}{%
+  \cleardoublepage%
+  {%
+  \sffamily%
+  \pagecolor{Cornsilk}
+  \newgeometry{left=2.0cm, right=2cm, top=1cm, bottom=0.5cm}
+  \vspace*{1in}%
+  \fontsize{50}{54}\selectfont\par\noindent{S\textcolor{SlateGrey}{tudent}\\\vspace{-0.05in}\noindent{G\textcolor{SlateGrey}{rowth}}\\\vspace{0.15in}\noindent{P\textcolor{SlateGrey}{ercentiles}}}%
+  \vspace{0.5in}%
+  \fontsize{24}{26}\selectfont\par\noindent\textcolor{SlateGrey}{Theory and Calculation}%
+  \vspace{0.75in}%
+  \fontsize{14}{16}\selectfont\par\noindent\textcolor{SlateGrey}{\thanklessauthor}%
+  \vspace{3.5in}%
+  \begin{center}
+  \includegraphics[width=0.7in]{images/CFA_Logo.png}
+  \fontsize{14}{16}\selectfont\par\noindent\textcolor{SlateGrey}{National Center for the Improvement of Educational Assessment}%
+  \end{center}
+  }
+  \thispagestyle{empty}%
+  \restoregeometry%
+  \pagecolor{White}
+  \pagebreak
+}
+
+% From "user11232" at:
+% http://tex.stackexchange.com/questions/167526/how-to-write-dedication-properly
+
+\newenvironment{dedication}
+  {%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+% title / author / date
+\title{Student Growth Percentiles}
+\author{Damian W Betebenner \& Adam R VanIwaarden}
+\date{October 12th, 2017}
+
+\begin{document}
+
+\maketitle
+
+
+%  No abstract for packagePages::tufte_book
+% \begin{abstract}
+% \noindent This document provides an introduction to Student Growth Percentiles
+(SGP)
+% \end{abstract}
+
+\begin{dedication}
+For \c{C}i\u{g}dem \& \c{S}\^{i}lan, all of my love.
+\end{dedication}
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+
+\chapter{Preface}\label{preface}
+
+The following provides a brief introduction to generalized additive
+models and some thoughts on getting started within the R environment. It
+doesn't assume much more than a basic exposure to regression, and maybe
+a general idea of R though not necessarily any particular expertise. The
+presentation is of a very applied nature, and such that the topics build
+upon the familiar and generalize to the less so, with the hope that one
+can bring the concepts they are comfortable with to the new material.
+The audience in mind is a researcher with typical applied science
+training.
+
+As this document is more conceptual, a basic familiarity with R is all
+that is needed to follow the code, though there is much to be gained
+from simple web browsing on R if one needs it. And while it wasn't the
+intention starting out, this document could be seen as a vignette for
+the {mgcv} package, which is highly recommended.
+
+This section provides basic details about the calculation of student
+growth percentiles from Georgia state assessment data using the
+\href{http://www.r-project.org/}{\texttt{R} Software Environment}
+\citep{Rsoftware} in conjunction with the
+\href{https://github.com/CenterForAssessment/SGP}{\texttt{SGP} package}
+\citep{sgp2017}. For a more in-depth discussion of SGP calculation, see
+Betebenner \citeyearpar{Betebenner:2009}, and see Shang, VanIwaarden and
+Betebenner \citeyearpar{ShangVanIBet:2015} and Appendix B of this report
+for further information on the SIMEX measurement error correction
+methodology.
+
+This document was created with \href{http://rstudio.org/}{Rstudio} and
+rmarkdown. {Last modified 2017-11-01. Original draft August, 2012.}
+
+\cite{Betebenner:2009}
+
+Color guide:
+
+\begin{itemize}
+\tightlist
+\item
+  {important term}
+\item
+  \href{}{link}
+\item
+  {package}
+\item
+  {function}
+\item
+  {object or class}
+\end{itemize}
+
+R Info: \textbf{R version 3.4.2 (2017-09-28) Short Summer}
+
+\chapter{Conclusion}\label{conclusion}
+
+Generalized additive models are a conceptually straightforward tool that
+allows one to incorporate nonlinear predictor effects into their
+otherwise linear models. In addition, they allow one to keep within the
+linear and generalized linear modeling frameworks with which one is
+already familiar, while providing new avenues of model exploration and
+possibly improved results. As was demonstrated, it is easy enough with
+just a modicum of familiarity to pull them off within the R environment,
+and as such, it is hoped that this document provides the means to do so.
+
+\renewcommand\bibname{References}
+\bibliography{/Library/Frameworks/R.framework/Versions/3.4/Resources/library/Literasee/rmarkdown/content/bibliography/Literasee.bib}
+
+
+
+\end{document}

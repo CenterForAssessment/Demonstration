@@ -3189,7 +3189,7 @@ tbody.collapse.in {
   display: none;
   float: left;
   min-width: 160px;
-  padding: 5px 0;
+  padding: 10px 0;
   margin: 2px 0 0;
   list-style: none;
   font-size: 15px;
@@ -3994,7 +3994,7 @@ tbody.collapse.in {
     border-right: 1px solid #c7c77e;
     border-top: 1px solid #c7c77e;
     border-radius: 5px 5px 0px 0px;
-    padding-bottom: 6px;
+    padding-bottom: 0px;
     padding-top: 5px;
     margin-top: 5px; }
   .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
