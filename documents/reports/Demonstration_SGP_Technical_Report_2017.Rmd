@@ -7,8 +7,8 @@ date: "`r toOrdinal::toOrdinalDate('2017-10-12')`"
 keywords: "SGP, student growth percentiles, student growth projections, R"
 style: "tufte"
 includes:
-  in_header: SGP_Cover_Page.tex
-  before_body: dedication.tex
+  in_header: SGP_REPORT_COVER_PAGE.tex
+  before_body: LICENSE.tex
 ---
 
 ```{r setup, include=FALSE}
