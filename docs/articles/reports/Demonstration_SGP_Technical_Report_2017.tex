@@ -106,15 +106,14 @@
 % From "user11232" at:
 % http://tex.stackexchange.com/questions/167526/how-to-write-dedication-properly
 
-\newenvironment{dedication}
+\newenvironment{License}
   {%\clearpage           % we want a new page          %% I commented this
    \thispagestyle{empty}% no header and footer
-   \vspace*{\stretch{1}}% some space at the top
-   \itshape             % the text is in italics
-   \raggedleft          % flush to the right margin
+   \vspace*{\stretch{3}}% some space at the top
+   \raggedright          % flush to the right margin
   }
   {\par % end the paragraph
-   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \vspace{\stretch{1}} % space at bottom is 1/3 times that at the top
    \clearpage           % finish off the page
   }
 
@@ -134,9 +133,9 @@
 (SGP)
 % \end{abstract}
 
-\begin{dedication}
+\begin{License}
 For \c{C}i\u{g}dem \& \c{S}\^{i}lan, all of my love.
-\end{dedication}
+\end{License}
 
 {
 \setcounter{tocdepth}{1}
@@ -173,7 +172,7 @@ for further information on the SIMEX measurement error correction
 methodology.
 
 This document was created with \href{http://rstudio.org/}{Rstudio} and
-rmarkdown. {Last modified 2017-11-01. Original draft August, 2012.}
+rmarkdown. {Last modified 2017-11-03. Original draft August, 2012.}
 
 \cite{Betebenner:2009}
 

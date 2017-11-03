@@ -7,8 +7,8 @@ date: "October 12th, 2017"
 keywords: "SGP, student growth percentiles, student growth projections, R"
 style: "tufte"
 includes:
-  in_header: SGP_Cover_Page.tex
-  before_body: dedication.tex
+  in_header: SGP_REPORT_COVER_PAGE.tex
+  before_body: LICENSE.tex
 ---
 
 
@@ -22,7 +22,7 @@ As this document is more conceptual, a basic familiarity with R is all that is n
 
 This section provides basic details about the calculation of student growth percentiles from Georgia state assessment data using the [`R` Software Environment](http://www.r-project.org/) [@Rsoftware] in conjunction with the [`SGP` package](https://github.com/CenterForAssessment/SGP) [@sgp2017].  For a more in-depth discussion of SGP calculation, see Betebenner [-@Betebenner:2009], and see Shang, VanIwaarden and Betebenner [-@ShangVanIBet:2015] and Appendix B of this report for further information on the SIMEX measurement error correction methodology.
 
-This document was created with [Rstudio](http://rstudio.org/) and rmarkdown. <span class="marginnote">Last modified 2017-11-01. Original draft August, 2012.</span>
+This document was created with [Rstudio](http://rstudio.org/) and rmarkdown. <span class="marginnote">Last modified 2017-11-03. Original draft August, 2012.</span>
 
 \cite{Betebenner:2009}
 
