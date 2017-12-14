@@ -1,0 +1,40 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Betebenner(2009)]{Betebenner:2009}
+Damian~W Betebenner.
+\newblock Norm- and criterion-referenced student growth.
+\newblock \emph{Educational Measurement: Issues and Practice}, 28\penalty0
+  (4):\penalty0 42--51, 2009.
+
+\bibitem[Betebenner et~al.(2017)Betebenner, {VanIwaarden}, Domingue, and
+  Shang]{sgp2017}
+Damian~W. Betebenner, Adam {VanIwaarden}, Ben Domingue, and Yi~Shang.
+\newblock \emph{{SGP}: Student Growth Percentiles \& Percentile Growth
+  Trajectories.}, 2017.
+\newblock URL \url{sgp.io}.
+\newblock R package version 1.7-0.0.
+
+\bibitem[{R Development Core Team}(2017)]{Rsoftware}
+{R Development Core Team}.
+\newblock \emph{{\textup{\textsf{R}}}: A language and environment for
+  statistical computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria, 2017.
+\newblock URL \url{http://www.R-project.org}.
+
+\bibitem[Shang et~al.(2015)Shang, VanIwaarden, and
+  Betebenner]{ShangVanIBet:2015}
+Yi~Shang, Adam VanIwaarden, and Damian~W. Betebenner.
+\newblock Covariate measurement error correction for student growth percentiles
+  using the simex method.
+\newblock \emph{Educational Measurement: Issues and Practice}, 34\penalty0
+  (1):\penalty0 4--14, 2015.
+\newblock ISSN 1745-3992.
+\newblock \doi{10.1111/emip.12058}.
+\newblock URL \url{http://dx.doi.org/10.1111/emip.12058}.
+
+\end{thebibliography}
