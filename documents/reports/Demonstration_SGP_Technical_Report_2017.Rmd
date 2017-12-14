@@ -1,51 +1,348 @@
 ---
-title: "Student Growth Percentiles"
-subtitle: "Theory and Implementation in R"
-abstract: "This document provides an introduction to Student Growth Percentiles (SGP)"
-author: "Damian W Betebenner & Adam R VanIwaarden"
-date: "`r toOrdinal::toOrdinalDate('2017-10-12')`"
-keywords: "SGP, student growth percentiles, student growth projections, R"
+title: "Demonstration SGP"
+subtitle: "Analysis & Results 2017"
+author:
+  - "Damian W Betebenner"
+  - "Adam R VanIwaarden"
+date: "December 14th, 2017"
+keywords: "Demonstration, SGP, student growth percentiles, student growth projections, R"
 style: "tufte"
 includes:
-  in_header: SGP_REPORT_COVER_PAGE.tex
-  before_body: LICENSE.tex
+  in_header: "SGP_REPORT_COVER_PAGE.tex"
+  before_body: "LICENSE.tex"
 ---
 
-```{r setup, include=FALSE}
-library(tufte)
-# invalidate cache when the tufte version changes
-knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
-options(htmltools.dir.version = FALSE)
-```
-
-
-# Preface
-
-The following provides a brief introduction to generalized additive models and some thoughts on getting started within the R environment.  It doesn't assume much more than a basic exposure to regression, and maybe a general idea of R though not necessarily any particular expertise. The presentation is of a very applied nature, and such that the topics build upon the familiar and generalize to the less so, with the hope that one can bring the concepts they are comfortable with to the new material. The audience in mind is a researcher with typical applied science training.
-
-As this document is more conceptual, a basic familiarity with R is all that is needed to follow the code, though there is much to be gained from simple web browsing on R if one needs it. And while it wasn't the intention starting out, this document could be seen as a vignette for the <span class="pack">mgcv</span> package, which is highly recommended.
-
-This section provides basic details about the calculation of student growth percentiles from Georgia state assessment data using the [`R` Software Environment](http://www.r-project.org/) [@Rsoftware] in conjunction with the [`SGP` package](https://github.com/CenterForAssessment/SGP) [@sgp2017].  For a more in-depth discussion of SGP calculation, see Betebenner [-@Betebenner:2009], and see Shang, VanIwaarden and Betebenner [-@ShangVanIBet:2015] and Appendix B of this report for further information on the SIMEX measurement error correction methodology.
-
-This document was created with [Rstudio](http://rstudio.org/) and rmarkdown. <span class="marginnote">Last modified `r Sys.Date()`. Original draft August, 2012.</span>
-
-\cite{Betebenner:2009}
-
-Color guide:
-
-- <span class="emph">important term</span>
-- [link]()
-- <span class="pack">package</span>
-- <span class="func">function</span>
-- <span class="objclass">object or class</span>
-
-R Info: **`r sessionInfo()$R.version$version.string` `r sessionInfo()$R.version$nickname`**
+<!--SGPreport-->
 
 
 
-# Conclusion
 
-Generalized additive models are a conceptually straightforward tool that allows one to incorporate nonlinear predictor effects into their otherwise linear models. In addition, they allow one to keep within the linear and generalized linear modeling frameworks with which one is already familiar, while providing new avenues of model exploration and possibly improved results.  As was demonstrated, it is easy enough with just a modicum of familiarity to pull them off within the R environment, and as such, it is hoped that this document provides the means to do so.
+#  Introduction
+
+The SGP methodology is an open source norm- and criterion-referenced student growth analysis that produces student growth percentiles and student growth projections/targets for each student in the state with adequate longitudinal data.  The methodology is currently used for many purposes.  States and districts have used the results in various ways including parent/student diagnostic reporting, institutional improvement, and school and educator accountability.  Specifics about the manner in which growth is included in school and educator accountability can be found in documents related to those accountability systems.  
+
+This report includes four sections:
+
+- ***Data - *** includes details on the decision rules used in the raw data preparation and student record validation.
+- ***Analytics - *** introduces some of the basic statistical methods and the computational process implemented in the 2016 analyses.^[More in-depth treatment of the SGP Methodology can be found [here](https://github.com/CenterForAssessment/SGP_Resources/tree/master/articles).]
+- ***Goodness of Fit - *** investigates how well the statistical models used to produce SGPs fit Demonstration students' data.  This includes discussion of goodness of fit plots and the student-level correlations between SGP and prior achievement.
+- ***SGP Results - *** provides basic descriptive statistics from the 2016 analyses at both the state and school levels.
 
 
-# References
+
+#  Data
+
+Student Growth Percentiles have been produced for students that have a current score and at least one prior score in either the same subject or a related content area.
+
+
+## Longitudinal Data
+Growth analyses on assessment data require data that are linked to individual students over time.  Student growth percentile analyses require, at a minimum two, and preferably three years of assessment data for analysis of student progress.  To this end it is necessary that a unique student identifier be available so that student data records across years can be merged with one another and subsequently examined.  Because some records in the assessment data set contain students with more than one test score in a content area in a given year, a process to create unique student records in each content area by year combination was required in order to carry out subsequent growth analyses.  Furthermore, student records may be invalidated for other reasons.  The following business rules were used to either invalidate particular student records or select the appropriate record for use in the analyses.
+
+
+Table 1 shows the number of valid student records available for analysis after applying the data preparation business rules.  Note that this number does not represent the number of SGPs produced, however, because students are required to have at least one prior score available as well.
+
+
+<!-- HTML_Start -->
+<table class='gmisc_table breakboth' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
+<thead>
+<tr><td colspan='10' style='text-align: left;'>
+**Table 1:** Number of Valid Student Records by Grade and Subject</td></tr>
+<tr>
+<th colspan='1' style='font-weight: 900; border-top: 2px solid grey; text-align: center;'></th><th style='border-top: 2px solid grey;; border-bottom: hidden;'>&nbsp;</th>
+<th colspan='8' style='font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>Grades</th>
+</tr>
+<tr>
+<th style='border-bottom: 1px solid grey; text-align: center;'>Content Area</th>
+<th style='border-bottom: 1px solid grey;' colspan='1'>&nbsp;</th>
+<th style='border-bottom: 1px solid grey; text-align: center;'>3</th>
+<th style='border-bottom: 1px solid grey; text-align: center;'>4</th>
+<th style='border-bottom: 1px solid grey; text-align: center;'>5</th>
+<th style='border-bottom: 1px solid grey; text-align: center;'>6</th>
+<th style='border-bottom: 1px solid grey; text-align: center;'>7</th>
+<th style='border-bottom: 1px solid grey; text-align: center;'>8</th>
+<th style='border-bottom: 1px solid grey; text-align: center;'>9</th>
+<th style='border-bottom: 1px solid grey; text-align: center;'>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style='text-align: right;'>Mathematics</td>
+<td style='' colspan='1'>&nbsp;</td>
+<td style='text-align: right;'>4,863</td>
+<td style='text-align: right;'>4,792</td>
+<td style='text-align: right;'>4,618</td>
+<td style='text-align: right;'>4,756</td>
+<td style='text-align: right;'>4,634</td>
+<td style='text-align: right;'>4,598</td>
+<td style='text-align: right;'>5,001</td>
+<td style='text-align: right;'>4,703</td>
+</tr>
+<tr>
+<td style='border-bottom: 2px solid grey; text-align: right;'>Reading</td>
+<td style='border-bottom: 2px solid grey;' colspan='1'>&nbsp;</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,657</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,783</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,619</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,755</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,652</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,593</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,972</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,695</td>
+</tr>
+</tbody>
+</table>
+<!-- LaTeX_Start
+\begin{table}[ht]
+\centering
+\caption{**Table 1:** Number of Valid Student Records by Grade and Subject} 
+\begin{tabular}{rrrrrrrrr}
+  \toprule
+Content Area & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ 
+  \midrule
+Mathematics & 4,863 & 4,792 & 4,618 & 4,756 & 4,634 & 4,598 & 5,001 & 4,703 \\ 
+  Reading & 4,657 & 4,783 & 4,619 & 4,755 & 4,652 & 4,593 & 4,972 & 4,695 \\ 
+   \bottomrule
+\end{tabular}
+\end{table}
+
+LaTeX_End -->
+
+
+
+# Analytics
+
+This section provides basic details about the calculation of student growth percentiles from assessment data using the [`R` Software Environment](http://www.r-project.org/) [@Rsoftware] in conjunction with the [`SGP` package](https://github.com/CenterForAssessment/SGP) [@sgp2017].
+
+Broadly, the SGP analysis of the longitudinal student assessment data takes place in two steps:
+
+1. Data Preparation
+2. Data Analysis
+
+Those familiar with data analysis know that the bulk of the effort in the above two step process lies with Step 1: Data Preparation.  Following thorough data cleaning and preparation, data analysis using the `SGP` package takes clean data and makes it as easy as possible to calculate, summarize, output and visualize the results from SGP analyses.
+
+## Data Preparation
+
+The data preparation step involves taking data provided and producing a `.Rdata` file that will subsequently be analyzed in Step 2. This process is carried out annually as new data becomes available from the Demonstration assessment program.  The new data is read into [`R`](http://www.r-project.org/) and modified slightly into the format suitable for analysis with the [`SGP` package](https://github.com/CenterForAssessment/SGP).  With an appropriate longitudinal data set prepared, we move to the calculation of student-level SGPs.
+
+##  Data Analysis
+
+The objective of the student growth percentile (SGP) analysis is to describe how (a)typical a student's growth is by examining his/her current achievement relative to students with a similar achievement history; i.e his/her *academic peers*.^[see [this presentation](https://github.com/CenterForAssessment/SGP_Resources/blob/master/presentations/Academic_Peer_Slides.pdf) for a description of academic peers.] This norm-referenced growth quantity is estimated using quantile regression [@Koenker:2005] to model curvilinear functional relationships between student's prior and current scores.  One hundred such regression models are calculated for each separate analysis (defined as a unique ***year** by **content area** by **grade** by **prior order*** combination).  The end product of these 100 separate regression models is a single coefficient matrix, which serves as a look-up table to relate prior student achievement to current achievement for each percentile. This process ultimately leads to tens of thousands of model calculations during each annual round of analyses.
+
+
+
+SGP analyses follow a work flow established in previous years that includes the following 3 steps:
+
+1. Update the Demonstration state assessment meta-data required for SGP calculations using the `SGP` package.
+2. Conduct all SGP analyses.
+3. Combine results into the master longitudinal data set, summarize results and output data.
+
+### Update Demonstration meta-data
+
+The use of higher-level functions included in the `SGP` package (e.g. `analyzeSGP`) requires the availability of state specific assessment information.  This meta-data is compiled in a `R` object named `SGPstateData` that is housed in the package.
+
+#### Knots and boundaries
+Cubic B-spline basis functions are used in the calculation of SGPs to more adequately model the heteroscedasticity and non-linearity found in assessment data.^[It should be noted that the independent estimation of the regression functions can potentially result in the crossing of the quantile functions.  This occurs near the extremes of the distributions and is potentially more likely to occur given the use of non-linear functions.  A potential result of allowing the quantile functions to cross would be *lower* percentile estimations of growth for *higher* observed scale scores at the extremes (give all else equal in prior scores) and vice versa.  In order to deal with these contradictory estimates, quantile regression results are isotonized to prevent quantile crossing following the methods derived by Chernozhukov, Fernandez-Val and Glichon [-@chernozhukov2010quantile].]  These functions require the selection of boundary and interior knots.  Boundary knots (i.e. "boundaries") are end-points outside of the scale score distribution that anchor the B-spline basis.  These are typically selected by extending the entire range of scale scores by 10%.  That is, they are defined as lying 10% below the lowest obtainable/observed scale score (LOSS) and 10% above the highest obtainable/observed scale score (HOSS).  The interior knots (i.e. "knots") are the *internal* breakpoints that define the spline.  The default choice in the `SGP` package is to select the 20<sup>th</sup>, 40<sup>th</sup>, 60<sup>th</sup> and 80<sup>th</sup> quantiles of the observed scale score distribution.
+
+In general the knots and boundaries are computed from a distribution comprised of several years of test data (i.e. multiple cohorts combined) so that any irregularities in a single year are smoothed out.  This is important because subsequent annual analyses use these same knots and boundaries as well.  All defaults were used to compile the knots and boundaries for all tests from previous years.
+
+#### Proficiency level cutscores
+Cutscores are set externally by the Demonstration state officials through standard-setting processes.  These data are mainly required for student growth projections and growth targets.
+
+####  Other meta-data of interest
+...
+...
+...
+
+
+
+
+### Conduct SGP analyses
+
+We use the [`updateSGP`](http://www.inside-r.org/packages/cran/SGP/docs/updateSGP) function to ***a)*** do the final preparation and addition of the cleaned and formatted new annual data ([`prepareSGP`](http://www.inside-r.org/packages/cran/SGP/docs/prepareSGP) step) and ***b)*** calculate SGP estimates ([`analyzeSGP`](http://www.inside-r.org/packages/cran/SGP/docs/analyzeSGP) step).
+
+### Merge, output, summarize and visualize results
+
+Once all analyses were completed the results were merged into the master longitudinal data set ([`combineSGP`](http://www.inside-r.org/packages/cran/SGP/docs/combineSGP) step).
+A pipe delimited version of the complete long data is output ([`outputSGP`](http://www.inside-r.org/packages/cran/SGP/docs/outputSGP) step).
+The data is also summarized using the [`summarizeSGP` function](http://www.inside-r.org/packages/cran/SGP/docs/summarizeSGP),
+which produces many tables of descriptive statistics that are disaggregated at the state, district, school and instructor levels, as well as other factors of interest.
+Finally, visualizations (such as bubble charts) are produced from the data and summary tables using the [`visualizeSGP`](http://www.inside-r.org/packages/cran/SGP/docs/visualizeSGP) function.
+
+
+
+# Goodness of Fit
+
+Despite the use of B-splines to accommodate heteroscedasticity and skewness of the scale score distributions, assumptions that are made in the statistical modeling process can impact how well the percentile curves fit the data.  Examination of goodness-of-fit was conducted by first inspecting model fit plots the `SGP` software package produced for each analysis, and subsequently inspecting student level correlations between growth and achievement.  Discussion of the model fit plots in general and examples of them are provided below, as are tables of the correlation results.  The complete portfolio of model fit plots is provided in Appendix A of this report.
+
+## Model Fit Plots
+
+Using all available test scores as the variables, estimation of student growth percentiles was conducted for each possible student (those with a current score and at least one prior score).  Each analysis is defined by the grade and content area for the grade-level analyses and exact content area (and grade when relevant) sequences for the EOCT subjects.  The state of Demonstration has added an additional requirement that an analysis cohort must have at least 1,500 students in order to calculate SGPs.  A goodness of fit plot is produced for each unique analysis run in 2017 and are all provided in Appendix A to this report.
+
+The "Ceiling/Floor Effects Test" panel is intended to help identify potential problems in SGP estimation at the Highest and Lowest Obtainable (or Observed) Scale Scores (HOSS and LOSS).  Most often these effects are caused when it is relatively typical for extremely high (low) achieving students to consistently score at or near the HOSS (LOSS) each year leading to the SGPs for these students to be unexpectedly low (high).  That is, for example, if a sufficient number of students maintain performance at the HOSS over time, this performance will be estimated as typical, and therefore SGP estimates will reflect typical growth (e.g. 50th percentile).  In some cases small deviations from these extreme score values might even yield low growth estimates.  Although these score patterns can legitimately be estimated as a typical or low percentile, it is potentially an unfair description of actual student growth (and by proxy teacher or school, etc. performance metrics that use them).  Ultimately this is usually an artifact of the assessments' inability to adequately measure student performance at extreme ability levels.  
+
+The table of values here shows whether the current year scale scores at both extremes yield the expected SGPs^[Note that the prior year scale scores are not represented here, but are also a critical factor in ceiling effects.].  The expectation is that the majority of SGPs for students scoring at or near the LOSS will be low (preferably less than 5 and not higher than 10), and that SGPs for students scoring at or near the HOSS will be high (preferably higher than 95 and not less than 90).  Because few students may score *exactly* at the HOSS/LOSS, the top/bottom 50 students are selected and any student scoring within their range of scores are selected for inclusion in these tables.  Consequently, there may be a range of scores at the HOSS/LOSS rather than a single score, and there may be more than 50 students included in the HOSS/LOSS row if the 50 students at the extremes only contain the single HOSS/LOSS score.
+
+This table is meant to serve more as a "canary in the coal mine" than as a detailed, conclusive indicator of ceiling or floor effects, and a more fine grained analysis that considers the relationship between score histories and SGPs may be necessary.  Appendix C of this report provides a more in depth investigation.
+
+The two bottom panels compare the observed conditional density of the SGP estimates with the theoretical (uniform) density.  The bottom left panel shows the empirical distribution of SGPs given prior scale score deciles in the form of a 10 by 10 cell grid.  Percentages of student growth percentiles between the 10<sup>th</sup>, 20<sup>th</sup>, 30<sup>th</sup>, 40<sup>th</sup>, 50<sup>th</sup>, 60<sup>th</sup>, 70<sup>th</sup>, 80<sup>th</sup>, and 90<sup>th</sup> percentiles were calculated based upon the empirical decile of the cohort's prior year scaled score distribution^[The total students in each analysis varies depending on grade and subject, and prior score deciles are based only on scores for students used in the SGP calculations.].  With an infinite population of test takers, at each prior scaled score, with perfect model fit, the expectation is to have 10 percent of the estimated growth percentiles between 1 and 9, 10 and 19, 20 and 29, ..., and 90 and 99.  Deviations from 10 percent, indicated by red and blue shading, suggests lack of model fit.  The further *above* 10 the darker the red, and the further *below* 10 the darker the blue.  
+
+When large deviations occur, one likely cause is a clustering of scale scores that makes it impossible to "split" the score at a dividing point forcing a majority of the scores into an adjacent cell.  This occurs more often in lowest grade levels where fewer prior scores are available (particularly in the lowest grade when only a single prior is available).  Another common cause of this is small cohort size (e.g. fewer than 5,000 students).
+
+The bottom right panel of each plot is a Q-Q plot which compares the observed distribution of SGPs with the theoretical (uniform) distribution.  An ideal plot here will show black step function lines that do not deviate greatly from the ideal, red line which traces the 45 degree angle of perfect fit.
+
+
+
+## Growth and Prior Achievement at the Student Level
+
+To investigate the possibility that individual level misfit might impact summary level results, student level SGP results were examined relative to prior achievement.  With perfect fit to data, the correlation between students' most recent prior achievement scores and their student growth percentiles is zero (i.e., the goodness of fit tables would have a uniform distribution of percentiles across all previous scale score levels).  To investigate in another way, correlations between **a)** prior and current scale scores (achievement) and **b)** prior score and student growth percentiles were calculated.  Evidence of good model fit begins with a strong positive relationship between prior and current achievement, which suggests that growth is detectable and modeling it is reasonable to begin with.  A lack of relationship (zero correlation) between prior achievement and growth confirms that the model has fit the data well and produced a uniform distribution of percentiles across all previous scale score levels.
+
+Student-level correlations are presented in Table 2, and the results are generally as expected.  Strong relationships exist between prior and current scale scores for the grade level analyses (column 3).  With cohort-referenced (uncorrected) percentiles, the correlation between students' most recent prior achievement scores and their student growth percentiles is zero when the model is perfectly fit to the data.  This also indicates that students can demonstrate high (or low) growth regardless of prior achievement.  Correlations for Demonstration's SGPs are all essentially zero (column 4).
+
+
+### Grade level subjects
+
+
+<!-- HTML_Start -->
+<table class='gmisc_table breakboth' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
+<thead>
+<tr><td colspan='5' style='text-align: left;'>
+**Table 2:** Student Level Correlations between Prior Standardized Scale Score and 1) Current Scale Score and 2) SGP.</td></tr>
+<tr>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>Content Area</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>Grade</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>$\r_ { Test Scores}$</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>$\r_ { SGP}$</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>N Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style='text-align: right;'>Mathematics</td>
+<td style='text-align: right;'> 4</td>
+<td style='text-align: right;'>0.78</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,245</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 5</td>
+<td style='text-align: right;'>0.85</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,156</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 6</td>
+<td style='text-align: right;'>0.87</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,155</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 7</td>
+<td style='text-align: right;'>0.90</td>
+<td style='text-align: right;'>-0.01</td>
+<td style='text-align: right;'>4,152</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 8</td>
+<td style='text-align: right;'>0.90</td>
+<td style='text-align: right;'> 0.01</td>
+<td style='text-align: right;'>4,123</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 9</td>
+<td style='text-align: right;'>0.90</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,101</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'>10</td>
+<td style='text-align: right;'>0.90</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,250</td>
+</tr>
+<tr>
+<td style='text-align: right;'>Reading</td>
+<td style='text-align: right;'> 4</td>
+<td style='text-align: right;'>0.77</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,046</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 5</td>
+<td style='text-align: right;'>0.84</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,161</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 6</td>
+<td style='text-align: right;'>0.83</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,154</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 7</td>
+<td style='text-align: right;'>0.86</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,162</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 8</td>
+<td style='text-align: right;'>0.85</td>
+<td style='text-align: right;'> 0.00</td>
+<td style='text-align: right;'>4,113</td>
+</tr>
+<tr>
+<td style='text-align: right;'></td>
+<td style='text-align: right;'> 9</td>
+<td style='text-align: right;'>0.87</td>
+<td style='text-align: right;'>-0.01</td>
+<td style='text-align: right;'>4,078</td>
+</tr>
+<tr>
+<td style='border-bottom: 2px solid grey; text-align: right;'></td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>10</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>0.86</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> 0.01</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>4,237</td>
+</tr>
+</tbody>
+</table>
+<!-- LaTeX_Start
+\begin{table}[ht]
+\centering
+\caption{**Table 2:** Student Level Correlations between Prior Standardized Scale Score and 1) Current Scale Score and 2) SGP.} 
+\begin{tabular}{rrrrr}
+  \toprule
+Content Area & Grade & \$$\backslash$r\_ \{ Test Scores\}\$ & \$$\backslash$r\_ \{ SGP\}\$ & N Size \\ 
+  \midrule
+Mathematics &  4 & 0.78 &  0.00 & 4,245 \\ 
+   &  5 & 0.85 &  0.00 & 4,156 \\ 
+   &  6 & 0.87 &  0.00 & 4,155 \\ 
+   &  7 & 0.90 & -0.01 & 4,152 \\ 
+   &  8 & 0.90 &  0.01 & 4,123 \\ 
+   &  9 & 0.90 &  0.00 & 4,101 \\ 
+   & 10 & 0.90 &  0.00 & 4,250 \\ 
+  Reading &  4 & 0.77 &  0.00 & 4,046 \\ 
+   &  5 & 0.84 &  0.00 & 4,161 \\ 
+   &  6 & 0.83 &  0.00 & 4,154 \\ 
+   &  7 & 0.86 &  0.00 & 4,162 \\ 
+   &  8 & 0.85 &  0.00 & 4,113 \\ 
+   &  9 & 0.87 & -0.01 & 4,078 \\ 
+   & 10 & 0.86 &  0.01 & 4,237 \\ 
+   \bottomrule
+\end{tabular}
+\end{table}
+
+LaTeX_End -->
+
+
+#  References 
