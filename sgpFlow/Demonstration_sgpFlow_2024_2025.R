@@ -10,7 +10,7 @@ require(sgpFlowMatrices)
 load("Data/Demonstration_Data_LONG_2024_2025.Rdata")
 
 # Use super-cohort matrices
-projection.splineMatrices <- sgpFlowMatrices[['IN_sgpFlowMatrices']][['2024']][['SUPER_COHORT']]
+projection.splineMatrices <- sgpFlowMatrices[['DEMO_sgpFlowMatrices']][['2023_2024']][['SUPER_COHORT']]
 
 # Source and create sgpFlow configurations for MATHEMATICS and READING
 source("SGP_CONFIG/sgpFlow/2024_2025/MATHEMATICS.R")
