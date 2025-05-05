@@ -1,0 +1,244 @@
+
+Started prepareSGP Monday May 05 13:32:16 2025
+
+
+	SGP::prepareSGP(
+		 data = tmp.data
+		state = state
+		create.additional.variables = FALSE
+		create.achievement.level = FALSE )
+
+	NOTE: All values of observed data reside within the LOSS/HOSS values in the SGPstateData meta-data for DEMO.
+	NOTE: All values of observed data reside within the BOUNDARY values in the SGPstateData meta-data for DEMO.
+Finished prepareSGP Monday May 05 13:32:16 2025 in 0.062 Seconds 
+
+	Started baselineSGP Monday May 05 13:32:16 2025.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:16 2025.
+	Content Area: MATHEMATICS, Grade Progression: 3, 4. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:17 2025 in 0.219 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:17 2025.
+	Content Area: MATHEMATICS, Grade Progression: 4, 5. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:17 2025 in 0.243 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:17 2025.
+	Content Area: MATHEMATICS, Grade Progression: 3, 4, 5. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:17 2025 in 0.516 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:17 2025.
+	Content Area: MATHEMATICS, Grade Progression: 5, 6. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:18 2025 in 0.33 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:18 2025.
+	Content Area: MATHEMATICS, Grade Progression: 4, 5, 6. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:18 2025 in 0.266 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:18 2025.
+	Content Area: MATHEMATICS, Grade Progression: 6, 7. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:18 2025 in 0.21 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:18 2025.
+	Content Area: MATHEMATICS, Grade Progression: 5, 6, 7. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:19 2025 in 0.59 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:19 2025.
+	Content Area: MATHEMATICS, Grade Progression: 7, 8. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:19 2025 in 0.338 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:19 2025.
+	Content Area: MATHEMATICS, Grade Progression: 6, 7, 8. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:19 2025 in 0.273 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:19 2025.
+	Content Area: MATHEMATICS, Grade Progression: 8, 9. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:20 2025 in 0.234 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:20 2025.
+	Content Area: MATHEMATICS, Grade Progression: 7, 8, 9. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:20 2025 in 0.287 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:20 2025.
+	Content Area: MATHEMATICS, Grade Progression: 9, 10. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:20 2025 in 0.246 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:20 2025.
+	Content Area: MATHEMATICS, Grade Progression: 8, 9, 10. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:20 2025 in 0.303 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:20 2025.
+	Content Area: READING, Grade Progression: 3, 4. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:21 2025 in 0.208 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:21 2025.
+	Content Area: READING, Grade Progression: 4, 5. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:21 2025 in 0.21 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:21 2025.
+	Content Area: READING, Grade Progression: 3, 4, 5. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:21 2025 in 0.264 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:21 2025.
+	Content Area: READING, Grade Progression: 5, 6. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:21 2025 in 0.222 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:21 2025.
+	Content Area: READING, Grade Progression: 4, 5, 6. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:22 2025 in 0.294 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:22 2025.
+	Content Area: READING, Grade Progression: 6, 7. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:22 2025 in 0.229 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:22 2025.
+	Content Area: READING, Grade Progression: 5, 6, 7. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:22 2025 in 0.289 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:22 2025.
+	Content Area: READING, Grade Progression: 7, 8. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:22 2025 in 0.209 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:22 2025.
+	Content Area: READING, Grade Progression: 6, 7, 8. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:23 2025 in 0.292 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:23 2025.
+	Content Area: READING, Grade Progression: 8, 9. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:23 2025 in 0.218 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:23 2025.
+	Content Area: READING, Grade Progression: 7, 8, 9. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:23 2025 in 0.286 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:23 2025.
+	Content Area: READING, Grade Progression: 9, 10. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:23 2025 in 0.252 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:23 2025.
+	Content Area: READING, Grade Progression: 8, 9, 10. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:24 2025 in 0.287 Seconds.
+
+	Finished baselineSGP Monday May 05 13:32:24 2025 in 7.335 Seconds.
+
+
+Started prepareSGP Monday May 05 13:32:25 2025
+
+
+	SGP::prepareSGP(
+		 data = tmp.data
+		state = state
+		create.additional.variables = FALSE
+		create.achievement.level = FALSE )
+
+	NOTE: All values of observed data reside within the LOSS/HOSS values in the SGPstateData meta-data for DEMO.
+	NOTE: All values of observed data reside within the BOUNDARY values in the SGPstateData meta-data for DEMO.
+Finished prepareSGP Monday May 05 13:32:25 2025 in 0.244 Seconds 
+
+	Started baselineSGP Monday May 05 13:32:25 2025.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:25 2025.
+	Content Area: MATHEMATICS, Grade Progression: 3, 4. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:26 2025 in 1.142 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:26 2025.
+	Content Area: MATHEMATICS, Grade Progression: 4, 5. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:27 2025 in 0.826 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:27 2025.
+	Content Area: MATHEMATICS, Grade Progression: 3, 4, 5. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:28 2025 in 1.191 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:28 2025.
+	Content Area: MATHEMATICS, Grade Progression: 5, 6. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:29 2025 in 1.05 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:29 2025.
+	Content Area: MATHEMATICS, Grade Progression: 4, 5, 6. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:30 2025 in 1.115 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:30 2025.
+	Content Area: MATHEMATICS, Grade Progression: 6, 7. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:31 2025 in 0.8 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:31 2025.
+	Content Area: MATHEMATICS, Grade Progression: 5, 6, 7. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:32 2025 in 1.031 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:32 2025.
+	Content Area: MATHEMATICS, Grade Progression: 7, 8. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:33 2025 in 0.836 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:33 2025.
+	Content Area: MATHEMATICS, Grade Progression: 6, 7, 8. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:34 2025 in 1.106 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:34 2025.
+	Content Area: MATHEMATICS, Grade Progression: 8, 9. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:35 2025 in 0.901 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:35 2025.
+	Content Area: MATHEMATICS, Grade Progression: 7, 8, 9. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:36 2025 in 1.118 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:36 2025.
+	Content Area: MATHEMATICS, Grade Progression: 9, 10. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:37 2025 in 0.857 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:37 2025.
+	Content Area: MATHEMATICS, Grade Progression: 8, 9, 10. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:38 2025 in 1.007 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:38 2025.
+	Content Area: READING, Grade Progression: 3, 4. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:39 2025 in 1.076 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:39 2025.
+	Content Area: READING, Grade Progression: 4, 5. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:40 2025 in 0.793 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:40 2025.
+	Content Area: READING, Grade Progression: 3, 4, 5. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:41 2025 in 0.922 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:41 2025.
+	Content Area: READING, Grade Progression: 5, 6. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:42 2025 in 0.77 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:42 2025.
+	Content Area: READING, Grade Progression: 4, 5, 6. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:43 2025 in 0.99 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:43 2025.
+	Content Area: READING, Grade Progression: 6, 7. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:43 2025 in 0.786 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:43 2025.
+	Content Area: READING, Grade Progression: 5, 6, 7. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:44 2025 in 0.934 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:44 2025.
+	Content Area: READING, Grade Progression: 7, 8. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:45 2025 in 0.817 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:45 2025.
+	Content Area: READING, Grade Progression: 6, 7, 8. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:46 2025 in 1.038 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:46 2025.
+	Content Area: READING, Grade Progression: 8, 9. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:47 2025 in 0.826 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:47 2025.
+	Content Area: READING, Grade Progression: 7, 8, 9. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:48 2025 in 1.086 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:48 2025.
+	Content Area: READING, Grade Progression: 9, 10. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:49 2025 in 0.823 Seconds.
+
+	Started baselineSGP Coefficient Matrix Calculation: Monday May 05 13:32:49 2025.
+	Content Area: READING, Grade Progression: 8, 9, 10. 
+	Finished baselineSGP Coefficient Matrix Calculation Monday May 05 13:32:50 2025 in 1.082 Seconds.
+
+	Finished baselineSGP Monday May 05 13:32:50 2025 in 24.947 Seconds.
+
