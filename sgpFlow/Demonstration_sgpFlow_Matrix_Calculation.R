@@ -28,7 +28,6 @@ DEMO_Super_Cohort.config <- c(MATHEMATICS_Super_Cohort.config, READING_Super_Coh
 # Create sgpFlow matrices
 DEMO_sgpFlow_Matrices <- createMatrices(
      data_for_matrices=Demonstration_Data_LONG_2024_2025,
-     state="DEMO",
      matrix.sgp.config=DEMO_Matrix.config,
      super_cohort.sgp.config=DEMO_Super_Cohort.config,
      super_cohort_base_years=c("2020_2021", "2021_2022", "2022_2023", "2023_2024", "2024_2025"),

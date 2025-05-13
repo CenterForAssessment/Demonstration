@@ -5,6 +5,7 @@
 ### Load packages
 require(sgpFlow)
 require(sgpFlowMatrices)
+#debug(sgpFlow::sgpFlow)
 
 ### Load data
 load("Data/Demonstration_Data_LONG_2024_2025.Rdata")
